@@ -5,7 +5,7 @@ var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 var port = process.env.Port || 4201;
 const cors =require('cors')
-const whiteList =['http://localhost:4200','http://localhost:4201']
+const whiteList =['http://localhost:4200','http://localhost:4201','ifts16-taller3-tiendaback-production.up.railway.app']
 var admin_route = require('./routes/admin');
 var cliente_route = require('./routes/cliente');
 
@@ -18,7 +18,8 @@ mongoose.connect('mongodb+srv://testTienda:JA4X37KWL2gO6WQn@tienda.xthlu27.mongo
     } else {
 
         app.listen(port, function () {
-            console.log("\n**** servidor corriendo en ==> http://localhost:" + port+" ****** \n");
+            console.log("\n**** servidor local corriendo en ==> http://localhost:" + port+" ****** \n");
+            console.log("\n**** servidor externo corriendo en ==> ifts16-taller3-tiendaback-production.up.railway.app"+" ****** \n")
         });
     }
 });
